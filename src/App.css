@@ -1,0 +1,7 @@
+.App {
+  text-align: center;
+  border: 1px solid black;
+  margin: 50px 150px;
+  padding: 50px;    
+  flex: 1;
+}

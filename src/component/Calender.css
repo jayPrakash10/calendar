@@ -1,0 +1,53 @@
+.container{
+    display: flex;
+}
+
+.calender{
+    border: 1px solid gray;
+    flex: 0.6;
+}
+.header{
+    background-image: linear-gradient(to right, white, lightblue);
+    padding : 5px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    text-align: left;
+}
+.header > img{
+    height: 30px;
+    margin-right: 10px;
+}
+.current{
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.current > img{
+    height: 20px;
+}
+.days{
+    display: flex;
+    justify-content: space-around;
+}
+.days > div{
+    padding: 5px;
+    flex: 1;
+}
+
+.dates:hover{
+    color: white;
+    background-color: skyblue;
+    cursor: pointer;
+}
+.dates{
+    height: 57.45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+.event{
+    flex : 0.4;
+}
