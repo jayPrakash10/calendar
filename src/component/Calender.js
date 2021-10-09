@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Calender.css'
+import Month from './Month';
+import Event from './Event'; 
+
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 function Calender(){
+    const [date, setdate] = useState(new Date())
     return(
         <div className='container'>
             <div className='calender'>
-                <div className='header'><img src='/images/calendar.png'/>Calender</div>
-                <div className='current'><img src='/images/back.png'/><h2>Date</h2><img src='/images/next.png'/></div>
+                <div className='header'><img src='/images/calendar.png' alt=''/><strong>Calender</strong></div>
+                <div className='current'>
+                    <img src='/images/back.png' alt='' onClick={()=> setdate(new Date(date.setFullYear(date.getFullYear()-1))) }/>
+                    <img src='/images/left-arrow.png' alt='' onClick={()=> setdate(new Date(date.setMonth(date.getMonth()-1))) }/>
+                    <h2>{months[date.getMonth()]}, {date.getFullYear()}</h2>
+                    <img src='/images/right-arrow.png' alt='' onClick={()=> setdate(new Date(date.setMonth(date.getMonth()+1))) }/>
+                    <img src='/images/next.png' alt='' onClick={()=> setdate(new Date(date.setFullYear(date.getFullYear()+1))) }/>
+                </div>
                 <div className='days'>
                     <div>Mon</div>
                     <div>Tue</div>
@@ -16,9 +27,12 @@ function Calender(){
                     <div>Sat</div>
                     <div>Sun</div>
                 </div>
+                <Month date={date}/>
             </div>
             <div className='event'>
-                Event
+                <div className='header'><img src='/images/event.png' alt=''/><strong>Events</strong></div>
+                <Event />
+                <Event />
             </div>
         </div>
     )
