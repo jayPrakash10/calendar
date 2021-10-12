@@ -1,7 +1,14 @@
 .App {
   text-align: center;
   border: 1px solid black;
-  margin: 50px 150px;
+  margin: 50px 100px;
   padding: 50px;    
   flex: 1;
+}
+
+@media screen and (max-width: 450px) {
+  .App{
+    margin: 0;
+    padding: 25px;
+  }
 }
