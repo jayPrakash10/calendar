@@ -15,6 +15,7 @@
     border: 1px solid gray;
     width: 402.15px;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .calendarcard .header, .eventcard .header{
@@ -147,20 +148,37 @@
     font-size: 20px;
 }
 
+@media screen and (max-width:1100px) {
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .eventcard{
+        width: 100%;
+    }
+}
 @media screen and (max-width:450px) {
+    .container{
+        flex-direction: unset;
+    }
     .calender{
         width: 100%;
         margin-bottom: 20px;
     }
     .dates, .disable{
-        border-radius: 10px;
         width: 11.52%;
         height: 41.66px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 5px;
     }
+    .currentdate h1{
+        margin: 20px;
+        font-size: 50px;
+    }
+    .currentdate *:nth-child(2){
+        font-size: 15px;
+    }
+    .currentdate *:last-child{
+        font-size: 20px;
+    }    
     .eventcard{
         width: 100%;
     }
