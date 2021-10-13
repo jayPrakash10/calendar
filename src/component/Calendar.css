@@ -1,58 +1,101 @@
-.container{
+.container, .calendarcard .header, .current, .days, .eventcard .header{
     display: flex;
+}
+
+.container{
+    align-items: flex-start;
     flex-wrap:wrap;
+}
+
+.calendarcard, .days div, .eventcard, .current img{
+    padding: 5px;
 }
 
 .calendarcard{
     border: 1px solid gray;
     width: 402.15px;
     border-radius: 5px;
-    padding: 5px;
+}
+
+.calendarcard .header, .eventcard .header{
+    padding : 5px 15px;
+    border-radius: 5px 5px 0 0;
+}
+
+.calendarcard .header, .eventcard .header, .current{
+    align-items: center;
 }
 
 .calendarcard .header{
     background-image: linear-gradient(to right, white, lightblue);
-    padding : 5px 15px;
-    border-radius: 5px 5px 0 0;
-    display: flex;
-    align-items: center;
     font-size: 30px;
     text-align: left;
 }
-.header > img{
+
+.header img{
     height: 30px;
     margin-right: 10px;
 }
 
+.calendar{
+    background-color: white;
+}
+
 .current{
-    display: flex;
     padding: 0 10px;
-    align-items: center;
     justify-content: space-between;
 }
-.current > img{
-    padding: 5px;
+
+.current img{
     height: 20px;
     cursor: pointer;
 }
+
 .current h2{
     cursor: pointer;
     flex: 0.9;
 }
 
-.days, .month{
-    display: flex;
-}
-.days > div{
+.days div{
     width: 14%;
     font-weight:500;
-    padding: 5px;
+}
+
+.eventcard{
+    flex : 1;
+    text-align: left;
+}
+.eventcard .header{
+    background-image: linear-gradient(to right, white, rgb(255, 80, 60));
+    font-size: 20px;
+}
+
+.currentdate{
+    text-align: center;
+    flex: 1;
+    color: seashell;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    background-color: royalblue;
+    border-radius: 50px;
+}
+.currentdate h1{
+    margin: 20px;
+    font-size: 100px;
+    display: inline;
+}
+.currentdate *:nth-child(2){
+    font-size: 30px;
+    display: inline;
+}
+.currentdate *:last-child{
+    font-size: 40px;
 }
 
 .month{
+    display: flex;
     flex-wrap: wrap;
 }
-
 .dates, .disable{
     border-radius: 10px;
     height: 47.46px;
@@ -67,35 +110,40 @@
     background-color: skyblue;
     cursor: pointer;
 }
-.active{
-    color: snow;
-    background-color: royalblue;
+
+.inputevent{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 30px;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
 }
-.disable{
-    color: slategrey;
+.inputevent > input{
+    width: 70%;
+    height: 100%;
+    font-size: 20px;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+.inputevent button{
+    border: 1px solid rgb(39, 162, 199);
+    border-radius: 10px;
+    font-weight: 800;
+    height: 100%;
+    width: 16%;
+    cursor: pointer;
 }
 
 .event{
-    padding: 5px;
-    flex : 1;
-    text-align: left;
-}
-.event .header{
-    background-image: linear-gradient(to right, white, rgb(255, 80, 60));
-    padding : 5px 15px;
-    border-radius: 5px 5px 0 0;
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-}
-
-.events{
     border:1px solid lightgray;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
 }
-.events div :first-child{
+.event div:first-child{
     font-size: 20px;
 }
 
@@ -113,7 +161,7 @@
         justify-content: center;
         padding: 5px;
     }
-    .event{
+    .eventcard{
         width: 100%;
     }
 }

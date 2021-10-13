@@ -1,6 +1,6 @@
 import React from "react";
 
-function Month({date}){
+function Month({date, set}){
     const d = new Date(date.getTime());
     const dates = []
     const currentmonth=d.getMonth()
@@ -15,13 +15,8 @@ function Month({date}){
         dates.push(dat)
     }
     while(d.getMonth()==currentmonth){
-        let dat
-        if(d.getDate()==new Date().getDate() && d.getMonth()==new Date().getMonth() && d.getFullYear()==new Date().getFullYear()){
-            dat=React.createElement('div',{className:'dates active'},d.getDate())
-        }
-        else{    
-            dat=React.createElement('div',{className:'dates'},d.getDate())
-        }
+        const dt = d.getTime()
+        const dat=React.createElement('div',{className:'dates', onClick:()=>{set(new Date(date.setTime(dt)))}}, d.getDate())
         d.setDate(d.getDate()+1)
         dates.push(dat)
     }
